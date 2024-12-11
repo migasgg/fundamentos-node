@@ -1,5 +1,28 @@
 import http from "node:http"
 
+// - Criação usuários
+// - Listagem usuários
+// - Edição de usuários
+
+// - HTTP
+//    - Method HTTP
+//    - URL
+
+// GET POST PUT PATCH DELETE
+// GET - Buscar um recurso do back-end
+// POST - Alterar um recurso do back-end
+// PUT - Atualizar um recurso do back-end
+// PATCH - Atualizar uma informação especifica de um recurso do back-end
+// DELETE - Deletar um recurso do back-end
+
+// GET/users - Buscar usuário do beck-end
+// POST/user - Criar um usuário do back-end
+
+// stateful - Stateless
+
+// cabeçalho (Requisição / Respostas) - Metadados
+
+// HTTP status code
 const users = []
 
 const server = http.createServer((req, res) => {
@@ -18,10 +41,10 @@ const server = http.createServer((req, res) => {
       email: "johndoe@exemple.com",
     })
 
-    return res.end("Criação de usuário")
+    return res.writeHead(201).end()
   }
 
-  return res.end("Sua aplicação falhou")
+  return res.writeHead(404).end()
 })
 
 server.listen(3333)
